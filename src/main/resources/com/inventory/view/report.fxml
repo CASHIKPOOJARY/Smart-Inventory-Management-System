@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.inventory.controller.ReportController"
+      spacing="10" alignment="CENTER" prefWidth="800" prefHeight="500">
+
+    <children>
+        <Label text="Transaction Report" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+
+        <HBox spacing="10" alignment="CENTER">
+            <children>
+                <Label text="From:"/>
+                <DatePicker fx:id="fromDate"/>
+                <Label text="To:"/>
+                <DatePicker fx:id="toDate"/>
+                <Label text="Type:"/>
+                <ComboBox fx:id="typeComboBox"/>
+                <Button text="Generate Report" onAction="#generateReport"/>
+            </children>
+        </HBox>
+
+        <TableView fx:id="reportTable" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="colProduct" text="Product" prefWidth="150"/>
+                <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                <TableColumn fx:id="colQuantity" text="Quantity" prefWidth="100"/>
+                <TableColumn fx:id="colUnitPrice" text="Unit Price" prefWidth="100"/>
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+                <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="10" alignment="CENTER">
+            <children>
+                <Button text="Export Excel" onAction="#exportExcel"/>
+                <Button text="Export PDF" onAction="#exportPdf"/>
+                <Button text="Back" onAction="#backToDashboard"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

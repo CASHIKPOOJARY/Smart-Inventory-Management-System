@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.inventory.controller.SupplierController">
+
+    <top>
+        <ToolBar>
+            <Label text="Manage Suppliers" style="-fx-font-size:16; -fx-font-weight:bold;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Back to Dashboard" onAction="#goBack"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <BorderPane>
+            <left>
+                <VBox spacing="8" prefWidth="320">
+                    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+                    <Label text="Add / Edit Supplier" style="-fx-font-weight:bold;"/>
+                    <TextField fx:id="nameField" promptText="Name"/>
+                    <TextField fx:id="contactField" promptText="Contact email/person"/>
+                    <TextField fx:id="phoneField" promptText="Phone"/>
+
+                    <HBox spacing="8">
+                        <Button text="Save" onAction="#saveSupplier" />
+                        <Button text="Update" onAction="#updateSupplier" />
+                        <Button text="Clear" onAction="#clearForm" />
+                    </HBox>
+                </VBox>
+            </left>
+
+            <center>
+                <TableView fx:id="table" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                        <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                        <TableColumn fx:id="colContact" text="Contact" prefWidth="160"/>
+                        <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </center>
+
+            <bottom>
+                <HBox spacing="8" alignment="CENTER_RIGHT">
+                    <padding><Insets top="8" right="12" bottom="12" left="12"/></padding>
+                    <Button text="Delete Selected" onAction="#deleteSelected"/>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </center>
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+</BorderPane>

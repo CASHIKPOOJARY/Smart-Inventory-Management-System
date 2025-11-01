@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="itextcore">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../itextcore" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../itextcore" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../itextcore" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../itextcore" recursive="false" type="SOURCES" />
+  </library>
+</component>
